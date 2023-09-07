@@ -2,6 +2,8 @@ import { ThemeProvider } from '@/components/theme-provider'
 import '@/styles/globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { useLocale } from 'next-intl';
+import { notFound } from 'next/navigation';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -12,12 +14,22 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  params
 }: {
   children: React.ReactNode
+  params: { locale: string }
 }) {
+
+  const locale = useLocale();
+
+  // Validate that the incoming `locale` parameter is a valid locale
+  if (params.locale !== locale) {
+    notFound();
+  }
+
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang={locale} suppressHydrationWarning>
+      <body  className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
         </ThemeProvider>
