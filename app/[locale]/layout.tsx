@@ -4,6 +4,8 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { useLocale } from 'next-intl';
 import { notFound } from 'next/navigation';
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+import Providers from '@/app/[locale]/providers';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -27,12 +29,15 @@ export default function RootLayout({
     notFound();
   }
 
+
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body  className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {children}
-        </ThemeProvider>
+      <body className={inter.className}>
+        <Providers>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            {children}
+          </ThemeProvider>
+        </Providers>
       </body>
     </html>
   )

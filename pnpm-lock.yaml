@@ -17,6 +17,12 @@ dependencies:
   '@radix-ui/react-slot':
     specifier: ^1.0.2
     version: 1.0.2(@types/react@18.2.21)(react@18.2.0)
+  '@tanstack/react-query':
+    specifier: 5.0.0-beta.23
+    version: 5.0.0-beta.23(react-dom@18.2.0)(react@18.2.0)
+  '@tanstack/react-query-devtools':
+    specifier: 5.0.0-beta.23
+    version: 5.0.0-beta.23(@tanstack/react-query@5.0.0-beta.23)(react-dom@18.2.0)(react@18.2.0)
   '@types/node':
     specifier: 20.5.9
     version: 20.5.9
@@ -787,6 +793,45 @@ packages:
     resolution: {integrity: sha512-sJ902EfIzn1Fa+qYmjdQqh8tPsoxyBz+8yBKC2HKUxyezKJFwPGOn7pv4WY6QuQW//ySQi5lJjA/ZT9sNWWNTg==}
     dependencies:
       tslib: 2.6.2
+    dev: false
+
+  /@tanstack/query-core@5.0.0-beta.23:
+    resolution: {integrity: sha512-Qp+U4EltOl7y8VZIhxy4eZR5xFnXll28Urp28e6ag10D69yYKRApS2O+ufcVCxOcm1GFv4rpp19gYrpoqHeWgA==}
+    dev: false
+
+  /@tanstack/query-devtools@5.0.0-beta.20:
+    resolution: {integrity: sha512-B4c9oZSS8TwL72A9ssIOv/fE5mYrdQ3eNAg8a7W30MwzbOh+f5z84m311huQC95Z9jNcL+ZNwtTJQ5o3dfz+7w==}
+    dev: false
+
+  /@tanstack/react-query-devtools@5.0.0-beta.23(@tanstack/react-query@5.0.0-beta.23)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-fw3f9h7M2AUgSkqv2lLTIKG/JJ3+fkOHR93VIHa0juMyePf3yaO2TWC55znuI9DTzF/X2ZbmVLbdPfIBJ/7AjQ==}
+    peerDependencies:
+      '@tanstack/react-query': ^5.0.0-beta.23
+      react: ^18.0.0
+      react-dom: ^18.0.0
+    dependencies:
+      '@tanstack/query-devtools': 5.0.0-beta.20
+      '@tanstack/react-query': 5.0.0-beta.23(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /@tanstack/react-query@5.0.0-beta.23(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-iaqcgUEf1aSVy60wxMt/p9joWyQYKa9eXn0TMdNmPUpH/SwiDeomiHFgvp1sP4vq+s32/BnygeNzbYFqG9ppJg==}
+    peerDependencies:
+      react: ^18.0.0
+      react-dom: ^18.0.0
+      react-native: '*'
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+      react-native:
+        optional: true
+    dependencies:
+      '@tanstack/query-core': 5.0.0-beta.23
+      client-only: 0.0.1
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /@types/negotiator@0.6.1:
