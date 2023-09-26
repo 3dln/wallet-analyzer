@@ -15,7 +15,7 @@ const TestComponent = () => {
         getData()
     }, [])
     return (
-        <div>
+        <div className="font-vazir">
             {success + ""}
         </div>
     );

@@ -1,3 +1,5 @@
+const { fontFamily } = require("tailwindcss/defaultTheme")
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
@@ -6,7 +8,7 @@ module.exports = {
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
-	],
+  ],
   theme: {
     container: {
       center: true,
@@ -50,6 +52,12 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+      },
+      fontFamily: {
+        sans: ["var(--font-iransansx)", "var(--font-inter)", ...fontFamily.sans],
+        'vazir': ['var(--font-vazir)'],
+        heading: ["var(--font-heading)", ...fontFamily.sans],
+        logo: ["var(--font-comforter)", ...fontFamily.sans],
       },
       borderRadius: {
         lg: "var(--radius)",

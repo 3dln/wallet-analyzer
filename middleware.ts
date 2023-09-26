@@ -13,7 +13,8 @@ export default async function middleware(request: NextRequest) {
         return NextResponse.next();
 
     // Step 1: Use the incoming request
-    const defaultLocale = request.headers.get('x-default-locale') || 'fa';
+    // const defaultLocale = request.headers.get('x-default-locale') || 'fa';
+    const defaultLocale = 'fa';
 
     // Step 2: Create and call the next-intl middleware
     const handleI18nRouting = createIntlMiddleware({
