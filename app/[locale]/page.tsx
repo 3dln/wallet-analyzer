@@ -1,16 +1,11 @@
 import { ModeToggle } from '@/components/darkmode-toggle'
-import Image from 'next/image'
-import { useTranslations } from 'next-intl';
 import TestComponent from '@/components/TestComponent';
-import Link from 'next/link';
-import { Posts } from './posts';
 import { getPosts } from '@/services/post.service';
 import { IPost } from '@/types/post';
 import PageTitle from './page-title';
 import HydratedPosts from './hydrated-posts';
 
 export default async function Home() {
-  const initialData: IPost[] = await getPosts()
 
   return (
     <main className="flex flex-col items-center justify-between min-h-screen p-24">
