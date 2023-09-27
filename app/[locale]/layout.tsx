@@ -4,17 +4,11 @@ import type { Metadata } from 'next'
 import { useLocale } from 'next-intl';
 import { notFound } from 'next/navigation';
 import Providers from '@/app/[locale]/providers';
-import { generalInfo } from '@/config/globals';
 import { iransansX, comforter, vazir, inter } from '@/app/fonts'
 
 export const metadata: Metadata = {
-  title: {
-    default: generalInfo.title,
-    template: `%s | ${generalInfo.title}`,
-  },
-  description: generalInfo.description,
-  keywords: generalInfo.keywords,
-  robots: "noindex, nofollow",
+  title: "Wallet Analyzer",
+  description: "Analyzes your wallet transactions",
 }
 
 export default function RootLayout({
